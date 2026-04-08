@@ -1,9 +1,14 @@
 HELLO = "brain-games\nWelcome to the Brain Games!"
-ANSWER = "Answer 'yes' if the number is even, otherwise answer 'no'."
-EXIT = "'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, {}!"
-RESULT = "What is the result of the expression?"
+QUESTION_1 = "Answer 'yes' if the number is even, otherwise answer 'no'."
+QUESTION_2 = "What is the result of the expression?"
+QUESTION_3 = "Find the greatest common divisor of given numbers."
+
+EXIT_1 = "'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, {}!"
+EXIT_2 = "'{}' is wrong answer ;(. Correct answer was '{}'.\nLet's try again, {}!"
 CONGL = "Congratulations, {}"
-WRONG_ANSW = "'{}' is wrong answer ;(. Correct answer was '{}'.\nLet's try again, Sam!"
-QUESTION = "Question: {}"
+INPUT_FROM_USER = "Question: {}"
 EXCEPT_CHISLO = "Введите число."
 GAME = 2
+
+PROGRAM_NACHALO = "May I have your name? "
+ANSWER_OUT = "Your answer: "
