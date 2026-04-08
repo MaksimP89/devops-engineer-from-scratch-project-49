@@ -5,6 +5,7 @@ build/
 wheels/
 *.egg-info
 
+
 # Project files
 .venv
 .idea/
