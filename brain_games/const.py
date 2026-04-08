@@ -3,8 +3,11 @@ QUESTION_1 = "Answer 'yes' if the number is even, otherwise answer 'no'."
 QUESTION_2 = "What is the result of the expression?"
 QUESTION_3 = "Find the greatest common divisor of given numbers."
 
-EXIT_1 = "'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, {}!"
-EXIT_2 = "'{}' is wrong answer ;(. Correct answer was '{}'.\nLet's try again, {}!"
+EXIT_1 = ("'yes' is wrong answer ;(."
+          "Correct answer was 'no'.\nLet's try again, {}!")
+EXIT_2 = ("'{}' is wrong answer ;(. "
+    "Correct answer was '{}'.\nLet's try again, {}!")
+
 CONGL = "Congratulations, {}"
 INPUT_FROM_USER = "Question: {}"
 EXCEPT_CHISLO = "Введите число."
