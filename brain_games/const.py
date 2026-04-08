@@ -1,3 +1,9 @@
 HELLO = "brain-games\nWelcome to the Brain Games!"
 ANSWER = "Answer 'yes' if the number is even, otherwise answer 'no'."
-EXIT = "'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again,{}!"
+EXIT = "'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, {}!"
+RESULT = "What is the result of the expression?"
+CONGL = "Congratulations, {}"
+WRONG_ANSW = "'{}' is wrong answer ;(. Correct answer was '{}'.\nLet's try again, Sam!"
+QUESTION = "Question: {}"
+EXCEPT_CHISLO = "Введите число."
+GAME = 2
