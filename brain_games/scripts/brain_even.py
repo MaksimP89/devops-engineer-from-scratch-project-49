@@ -13,11 +13,6 @@ from brain_games.const import (
 from brain_games.utils import exit_from_game, get_input_from_user, main_execution
 
 
-def is_even(num: int, ans: str) -> str:
-    correct_ans = "yes" if num % 2 == 0 else "no"
-    return True if correct_ans == ans else False
-
-
 def main():
     USER_NAME = welcome_user()
     run_game = 0
