@@ -23,8 +23,7 @@ def main():
         if answer == correct_ans:
             run_game += 1
         else:
-            print(EXIT.format(USER_NAME))
-            sys.exit()
+            sys.exit(EXIT.format(USER_NAME))
 
     print("Congratulations,", USER_NAME)
 
