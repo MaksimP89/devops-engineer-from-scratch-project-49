@@ -9,7 +9,7 @@ from brain_games.const import (
     EXIT_2,
     GAME,
     INPUT_FROM_USER,
-    QUESTION_3,
+    QUESTION_4,
 )
 from brain_games.utils import (
     exit_from_game,

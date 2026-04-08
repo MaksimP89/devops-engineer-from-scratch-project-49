@@ -10,7 +10,7 @@ from brain_games.const import (
     INPUT_FROM_USER,
     QUESTION_1,
 )
-from brain_games.utils import exit_from_game, get_input_from_user
+from brain_games.utils import exit_from_game, get_input_from_user, main_execution
 
 
 def is_even(num: int, ans: str) -> str:
@@ -24,14 +24,16 @@ def main():
     print(QUESTION_1)
     while run_game <= GAME:
         number = randint(0, 100)    
-        answer = get_input_from_user(INPUT_FROM_USER.format(number))
-        print(ANSWER_OUT.format(answer))
-        if is_even(number, answer):
-            print(CORRECT)
-            run_game += 1
-        else:
-            exit_from_game(EXIT_1.format(USER_NAME))
+        input_value = get_input_from_user(INPUT_FROM_USER.format(number))
+        run_game +=main_execution(
+            answer_out=ANSWER_OUT.format(input_value),
+            inp_user=input_value,
+            expect="yes" if number % 2 == 0 else "no",
+            exite_string=EXIT_1,
+            format_ex_str=[USER_NAME,],
+        )
 
+        
     print(CONGL.format(USER_NAME))
 
 
