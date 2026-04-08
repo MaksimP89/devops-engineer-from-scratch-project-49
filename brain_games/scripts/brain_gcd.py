@@ -3,7 +3,9 @@ from random import randint
 
 from brain_games.cli import welcome_user
 from brain_games.const import (
+    ANSWER_OUT,
     CONGL,
+    CORRECT,
     EXIT_2,
     GAME,
     INPUT_FROM_USER,
@@ -30,9 +32,13 @@ def main():
     print(QUESTION_3)
     while run_game <= GAME:
         expr, result = question()
+        print(expr, result)
         inp = get_input_from_user(INPUT_FROM_USER.format(expr))
         inp = get_int_from_user(inp)
+        print(ANSWER_OUT.format(inp))
+
         if inp == result:
+            print(CORRECT)
             run_game += 1
         else:
             exit_from_game(EXIT_2.format(inp, result, USER_NAME))

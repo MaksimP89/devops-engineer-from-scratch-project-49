@@ -14,4 +14,5 @@ EXCEPT_CHISLO = "Введите число."
 GAME = 2
 
 PROGRAM_NACHALO = "May I have your name? "
-ANSWER_OUT = "Your answer: "
+ANSWER_OUT = "Your answer: {}"
+CORRECT = "Correct!"

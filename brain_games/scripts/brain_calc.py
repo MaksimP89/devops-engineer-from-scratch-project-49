@@ -3,6 +3,7 @@ from random import choice, randint
 from brain_games.cli import welcome_user
 from brain_games.const import (
     CONGL,
+    CORRECT,
     EXIT_2,
     GAME,
     INPUT_FROM_USER,
@@ -18,7 +19,7 @@ from brain_games.utils import (
 def question():
     one = randint(0, 100)
     two = randint(0, 100)
-    lst = ["+", "-", "*"]
+    lst = ["+", "-"]
     expr = f"{str(one)} {choice(lst)} {str(two)}"
     result = eval(expr)
     return expr, result
@@ -37,6 +38,7 @@ def main():
         imp = get_input_from_user(INPUT_FROM_USER.format(expr))
         imp = get_int_from_user(imp)
         if chec_result(imp, r_result):
+            print(CORRECT)
             run_game += 1
         else:
             exit_from_game(EXIT_2.format(str(imp), str(r_result), USER_NAME))
