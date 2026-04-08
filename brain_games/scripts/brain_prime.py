@@ -8,34 +8,26 @@ from brain_games.const import (
     EXIT_2,
     GAME,
     INPUT_FROM_USER,
-    QUESTION_4,
+    QUESTION_5,
 )
 from brain_games.utils import (
-    exit_from_game,
     get_input_from_user,
-    get_int_from_user,
     main_execution,
+    is_prime,
 )
 
 
 def question():
-    length = 10
-    start = randint(1, 11)
-    step = randint(1, 5)
-    progression = [start + i * step for i in range(length)]
-    hidden_index = randint(0, length - 1)
-    correct_answer = progression[hidden_index] 
-    progression[hidden_index] = '..'
-    expr = ' '.join(str(x) for x in progression)
-    return expr, str(correct_answer)
-
+    number = randint(1, 100)
+    correct = "yes" if is_prime(number) else "no"
+    return str(number), correct    
 
 def main():
     USER_NAME = welcome_user()
     run_game = 0
-    print(QUESTION_4)    
+    print(QUESTION_5)    
     while run_game <= GAME:
-        expr, r_result = question()
+        expr, r_result = question()        
         imput_value = get_input_from_user(INPUT_FROM_USER.format(expr))       
         run_game += main_execution(
             answer_out=ANSWER_OUT.format(imput_value),
