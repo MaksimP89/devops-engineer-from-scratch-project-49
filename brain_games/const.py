@@ -8,7 +8,7 @@ EXIT_1 = ("'yes' is wrong answer ;(."
 EXIT_2 = ("'{}' is wrong answer ;(. "
     "Correct answer was '{}'.\nLet's try again, {}!")
 
-CONGL = "Congratulations, {}"
+CONGL = "Congratulations, {}!"
 INPUT_FROM_USER = "Question: {}"
 EXCEPT_CHISLO = "Введите число."
 GAME = 2

@@ -19,10 +19,7 @@ from brain_games.utils import (
 
 
 def question():
-    one = randint(0, 100)
-    two = randint(0, 100)
-    expr = f"{str(one)} {str(two)}"
-    result = math.gcd(one, two)
+    
     return expr, result
 
 

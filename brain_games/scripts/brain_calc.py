@@ -19,7 +19,7 @@ from brain_games.utils import (
 def question():
     one = randint(0, 100)
     two = randint(0, 100)
-    lst = ["+", "-"]
+    lst = ['+', '-','*']
     expr = f"{str(one)} {choice(lst)} {str(two)}"
     result = eval(expr)
     return expr, result
