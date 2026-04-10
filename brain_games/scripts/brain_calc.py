@@ -17,7 +17,7 @@ def input_func():
     expr = f"{str(one)} {choice(lst)} {str(two)}"
     result = eval(expr)
     
-    return str(result),expr
+    return str(result), expr
 
 
 def main():
