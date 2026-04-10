@@ -2,7 +2,9 @@ import sys
 
 import prompt
 
-from brain_games.const import (
+from brain_games.logic.const import(
+
+
     ANSWER_OUT,
     CONGL,
     CORRECT,

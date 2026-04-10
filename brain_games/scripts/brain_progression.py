@@ -1,10 +1,10 @@
 from random import randint
 
-from brain_games.const import (
+from brain_games.logic.const import (
     EXIT_2,
     QUESTION_4,
 )
-from brain_games.utils import (
+from brain_games.logic.utils import (
     main_loop,
     welcome_user,
 )

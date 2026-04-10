@@ -1,10 +1,10 @@
 from random import randint
 
-from brain_games.const import (
+from brain_games.logic.const import (
     EXIT_1,
     QUESTION_1,
 )
-from brain_games.utils import main_loop, welcome_user
+from brain_games.logic.utils import main_loop, welcome_user
 
 
 def inp_func():

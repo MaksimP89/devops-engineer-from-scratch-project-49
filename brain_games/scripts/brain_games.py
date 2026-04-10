@@ -1,4 +1,4 @@
-from brain_games.utils import welcome_user
+from brain_games.logic.utils import welcome_user
 
 
 def main():
