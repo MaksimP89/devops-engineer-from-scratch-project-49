@@ -1,4 +1,3 @@
-import math
 from random import randint
 
 from brain_games.cli import welcome_user
@@ -11,9 +10,7 @@ from brain_games.const import (
     QUESTION_4,
 )
 from brain_games.utils import (
-    exit_from_game,
     get_input_from_user,
-    get_int_from_user,
     main_execution,
 )
 
@@ -42,12 +39,11 @@ def main():
             inp_user=imput_value,
             expect=r_result,
             exite_string=EXIT_2,
-            format_ex_str=[imput_value,r_result,USER_NAME],            
+            format_ex_str=[imput_value, r_result, USER_NAME], 
         )
         
     print(CONGL.format(USER_NAME))
 
-    
 
 if __name__ == "__main__":
     main()

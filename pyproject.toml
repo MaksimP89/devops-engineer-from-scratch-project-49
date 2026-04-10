@@ -1,7 +1,8 @@
 [project]
 name = "hexlet-code"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+author="Maxim Ponomarenko"
+description = "Терминальная игра brain"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

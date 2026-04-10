@@ -1,4 +1,3 @@
-import math
 from random import randint
 
 from brain_games.cli import welcome_user
@@ -12,8 +11,8 @@ from brain_games.const import (
 )
 from brain_games.utils import (
     get_input_from_user,
-    main_execution,
     is_prime,
+    main_execution,
 )
 
 
@@ -21,6 +20,7 @@ def question():
     number = randint(1, 100)
     correct = "yes" if is_prime(number) else "no"
     return str(number), correct    
+
 
 def main():
     USER_NAME = welcome_user()
@@ -34,12 +34,11 @@ def main():
             inp_user=imput_value,
             expect=r_result,
             exite_string=EXIT_2,
-            format_ex_str=[imput_value,r_result,USER_NAME],            
+            format_ex_str=[imput_value, r_result, USER_NAME], 
         )
         
     print(CONGL.format(USER_NAME))
 
-    
 
 if __name__ == "__main__":
     main()

@@ -11,7 +11,6 @@ from brain_games.const import (
     QUESTION_3,
 )
 from brain_games.utils import (
-    exit_from_game,
     get_input_from_user,
     get_int_from_user,
     main_execution,
@@ -34,7 +33,7 @@ def main():
         expr, expect = question()        
         imput_value = get_input_from_user(INPUT_FROM_USER.format(expr))
         imput_value = get_int_from_user(imput_value)
-        run_game +=main_execution(
+        run_game += main_execution(
                 answer_out=ANSWER_OUT.format(imput_value),
                 inp_user=imput_value,
                 expect=expect,
