@@ -1,6 +1,5 @@
 from random import randint
 
-from brain_games.cli import welcome_user
 from brain_games.const import (
     ANSWER_OUT,
     CONGL,
@@ -13,6 +12,7 @@ from brain_games.utils import (
     get_input_from_user,
     is_prime,
     main_execution,
+    welcome_user,
 )
 
 
