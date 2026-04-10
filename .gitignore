@@ -4,7 +4,7 @@ __pycache__/
 build/
 wheels/
 *.egg-info
-
+dist/
 
 # Project files
 .venv
