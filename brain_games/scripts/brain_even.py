@@ -1,25 +1,28 @@
 from random import randint
 
-from brain_games.utils import welcome_user, main_loop
-from brain_games.const import (EXIT_1,QUESTION_1,
+from brain_games.const import (
+    EXIT_1,
+    QUESTION_1,
 )
+from brain_games.utils import main_loop, welcome_user
 
 
 def inp_func():
-    tmp = randint(0,100)
-    expect="yes" if tmp % 2 == 0 else "no"
+    tmp = randint(0, 100)
+    expect = "yes" if tmp % 2 == 0 else "no"
     return expect, tmp
+
 
 def main():
     USER_NAME = welcome_user()
     main_loop(
-        input_func=inp_func,        
+        input_func=inp_func, 
         question=QUESTION_1,
         user_name=USER_NAME,
-        exit=EXIT_1,)
-
-   
-
+        exit=EXIT_1,
+        exit_var=1,
+      )
+        
 
 if __name__ == "__main__":
     main()

@@ -12,63 +12,47 @@ def welcome_user():
     print(f"Hellow, {USER_NAME}")
     return USER_NAME
 
-
-def main_loop(input_func,question,user_name,exit,*args):
+def main_loop(input_func:callable,question:str,user_name:str,
+              exit:str,exit_var:int):
     run_game = 0
     print(question)
-    while run_game <= GAME:
+    while run_game < GAME:
         expect,result = input_func()
         input_value = get_input_from_user(INPUT_FROM_USER.format(result))
+        print(ANSWER_OUT.format(input_value))
+        add_exit_string = []
+        add_exit_string.append(user_name)
+        if exit_var != 1:
+            add_exit_string.insert(0,expect)
+            add_exit_string.insert(0,input_value)
+            
+        
         run_game += main_execution(
             inp_user=input_value,
             expect=expect,
             exite_string=exit,
-            format_ex_str=args,
+            format_param=add_exit_string,
         )
     print(CONGL.format(user_name))
 
 
 def main_execution(inp_user: str,expect,
-                   exite_string: str, format_ex_str: list) -> int:
+                   exite_string: str, format_param: list) -> int:
     
     if not inp_user == expect:
-        if not format_ex_str:
-            exit_from_game(exite_string)
-        else:
-            exit_from_game(exite_string.format(*format_ex_str))    
-    
+        exit_from_game(exite_string,format_param)
+        
     print(CORRECT)    
     
     return 1
-
-
-
-
-
-
-
-
-
-
-
 
 def get_input_from_user(str_out: str):
     input_str = prompt.string(str_out + '\n', True)
     return input_str
 
 
-def get_int_from_user(input: str) -> int:
-
-    try:
-        input = int(input)
-    except ValueError:
-        print(EXCEPT_CHISLO)
-
-    return input
-
-
-def exit_from_game(exit_string: str) -> None:
-    print(exit_string)
+def exit_from_game(exit_string: str,param) -> None:
+    print(exit_string.format(*param))
     sys.exit()
 
 
