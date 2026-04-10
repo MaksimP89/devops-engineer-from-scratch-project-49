@@ -6,6 +6,7 @@ from brain_games.logic.const import (
     ANSWER_OUT,
     CONGL,
     CORRECT,
+    EXIT,
     GAME,
     HELLO,
     INPUT_FROM_USER,
@@ -21,24 +22,19 @@ def welcome_user():
     return USER_NAME
 
 
-def main_loop(input_func: callable, question: str, user_name: str,
-              exit: str, exit_var: int):
+def main_loop(input_func: callable, question: str, user_name: str):
     run_game = 0
     print(question)
     while run_game < GAME:
         expect, result = input_func()
         input_value = get_input_from_user(INPUT_FROM_USER.format(result), 2)
         print(ANSWER_OUT.format(input_value))
-        add_exit_string = []
-        add_exit_string.append(user_name)
-        if exit_var != 1:
-            add_exit_string.insert(0, expect)
-            add_exit_string.insert(0, input_value)
-            
+        add_exit_string = [expect, input_value, user_name]
+              
         run_game += main_execution(
             inp_user=input_value,
             expect=expect,
-            exite_string=exit,
+            exite_string=EXIT,
             format_param=add_exit_string,
         )
     print(CONGL.format(user_name))
@@ -55,8 +51,8 @@ def main_execution(inp_user: str, expect,
     return 1
 
 
-def get_input_from_user(str_out: str,type_emtry:int):
-    if type_emtry == 1 :
+def get_input_from_user(str_out: str, type_emtry: int):
+    if type_emtry == 1:
         input_str = prompt.string(str_out, True)
     else:
         input_str = prompt.secret(str_out)

@@ -1,7 +1,6 @@
 from random import choice, randint
 
 from brain_games.logic.const import (
-    EXIT_2,
     QUESTION_2,
 )
 from brain_games.logic.utils import (
@@ -15,8 +14,7 @@ def input_func():
     two = randint(0, 100)
     lst = ['+', '-',]
     expr = f"{str(one)} {choice(lst)} {str(two)}"
-    result = eval(expr)
-    
+    result = eval(expr)    
     return str(result), expr
 
 
@@ -26,8 +24,7 @@ def main():
         input_func=input_func,
         question=QUESTION_2,
         user_name=USER_NAME,
-        exit=EXIT_2,
-        exit_var=2,
+                
         )
 
 

@@ -1,7 +1,6 @@
 from random import randint
 
 from brain_games.logic.const import (
-    EXIT_1,
     QUESTION_1,
 )
 from brain_games.logic.utils import main_loop, welcome_user
@@ -19,7 +18,6 @@ def main():
         input_func=inp_func, 
         question=QUESTION_1,
         user_name=USER_NAME,
-        exit=EXIT_1,
-        exit_var=1,
+                
       )
         
