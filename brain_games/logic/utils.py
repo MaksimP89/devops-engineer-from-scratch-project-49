@@ -49,7 +49,7 @@ def main_execution(inp_user: str, expect,
     return 1
 
 
-def get_input_from_user(str_out: str, type_emtry: int)-str:
+def get_input_from_user(str_out: str, type_emtry: int) -> str:
     # if type_emtry == 1:
     input_str = prompt.string(str_out, True)
     # else:
