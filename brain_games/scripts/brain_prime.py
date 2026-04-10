@@ -1,43 +1,46 @@
 from random import randint
 
 from brain_games.const import (
-    ANSWER_OUT,
-    CONGL,
     EXIT_2,
-    GAME,
-    INPUT_FROM_USER,
     QUESTION_5,
 )
 from brain_games.utils import (
-    get_input_from_user,
-    is_prime,
-    main_execution,
+    main_loop,
     welcome_user,
 )
 
 
-def question():
+def is_prime(n: int) -> bool:
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    
+    for i in range(3, int(n ** 0.5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+
+def input_func():
     number = randint(1, 100)
     correct = "yes" if is_prime(number) else "no"
-    return str(number), correct    
+    print(correct, number)
+    return correct, str(number)     
 
 
 def main():
     USER_NAME = welcome_user()
-    run_game = 0
-    print(QUESTION_5)    
-    while run_game <= GAME:
-        expr, r_result = question()        
-        imput_value = get_input_from_user(INPUT_FROM_USER.format(expr))       
-        run_game += main_execution(
-            answer_out=ANSWER_OUT.format(imput_value),
-            inp_user=imput_value,
-            expect=r_result,
-            exite_string=EXIT_2,
-            format_ex_str=[imput_value, r_result, USER_NAME], 
+    
+    main_loop(
+        input_func=input_func,
+        question=QUESTION_5,
+        user_name=USER_NAME,
+        exit=EXIT_2,
+        exit_var=2,
         )
-        
-    print(CONGL.format(USER_NAME))
 
 
 if __name__ == "__main__":
