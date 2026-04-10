@@ -15,9 +15,9 @@ from brain_games.logic.const import (
 
 def welcome_user():
     print(HELLO)
-    USER_NAME = get_input_from_user(PROGRAM_NACHALO)
+    USER_NAME = get_input_from_user(PROGRAM_NACHALO, 1)
     USER_NAME = USER_NAME.capitalize()
-    print(f"Hellow, {USER_NAME}")
+    print(f"Hello, {USER_NAME}")
     return USER_NAME
 
 
@@ -27,7 +27,7 @@ def main_loop(input_func: callable, question: str, user_name: str,
     print(question)
     while run_game < GAME:
         expect, result = input_func()
-        input_value = get_input_from_user(INPUT_FROM_USER.format(result))
+        input_value = get_input_from_user(INPUT_FROM_USER.format(result), 2)
         print(ANSWER_OUT.format(input_value))
         add_exit_string = []
         add_exit_string.append(user_name)
@@ -55,8 +55,11 @@ def main_execution(inp_user: str, expect,
     return 1
 
 
-def get_input_from_user(str_out: str):
-    input_str = prompt.string(str_out + '\n', True)
+def get_input_from_user(str_out: str,type_emtry:int):
+    if type_emtry == 1 :
+        input_str = prompt.string(str_out, True)
+    else:
+        input_str = prompt.secret(str_out)
     return input_str
 
 

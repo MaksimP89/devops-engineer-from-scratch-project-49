@@ -24,7 +24,7 @@ build:
 
 install-brain-games:
 	uv tool install dist/*.whl
-unnstall-brain-games
+unnstall-brain-games:
 	uv tool uninstall hexlet-code
 
 lint:
