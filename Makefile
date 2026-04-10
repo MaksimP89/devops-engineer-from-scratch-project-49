@@ -16,12 +16,16 @@ brain-prime:
 
 brain-progression:
 	uv run brain-progression
+all-brain-games:
+	uv run all-brain-games
 
 build:
 	uv build
 
-package-install:
+install-brain-games:
 	uv tool install dist/*.whl
+unnstall-brain-games
+	uv tool uninstall hexlet-code
 
 lint:
 	uv run ruff check brain_games

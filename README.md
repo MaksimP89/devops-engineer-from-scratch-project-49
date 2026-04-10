@@ -1,5 +1,22 @@
 
 
+### Установка
+
+Для установки приложений нужны утилиты uv и make
+
+
+```bash
+make build
+make install-brain-games
+
+```
+### Удаление
+```bash
+make unnstall-brain-games
+
+```
+
+
 
 
 ### Hexlet tests and linter status:
