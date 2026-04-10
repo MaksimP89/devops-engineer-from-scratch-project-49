@@ -29,19 +29,17 @@ def main_loop(input_func: callable, question: str, user_name: str):
         expect, result = input_func()
         input_value = get_input_from_user(INPUT_FROM_USER.format(result), 2)
         print(ANSWER_OUT.format(input_value))
-        add_exit_string = [expect, input_value, user_name]
-              
         run_game += main_execution(
-            inp_user=input_value,
-            expect=expect,
-            exite_string=EXIT,
-            format_param=add_exit_string,
+            inp_user = input_value,
+            expect = expect,
+            exite_string = EXIT,
+            format_param = (input_value,expect, user_name),
         )
     print(CONGL.format(user_name))
 
 
 def main_execution(inp_user: str, expect,
-                   exite_string: str, format_param: list) -> int:
+                   exite_string: str, format_param: tuple) -> int:
     
     if not inp_user == expect:
         exit_from_game(exite_string, format_param)
@@ -51,15 +49,15 @@ def main_execution(inp_user: str, expect,
     return 1
 
 
-def get_input_from_user(str_out: str, type_emtry: int):
-    if type_emtry == 1:
-        input_str = prompt.string(str_out, True)
-    else:
-        input_str = prompt.secret(str_out)
+def get_input_from_user(str_out: str, type_emtry: int)-str:
+    # if type_emtry == 1:
+    input_str = prompt.string(str_out, True)
+    # else:
+    #     input_str = prompt.secret(str_out)
     return input_str
 
 
-def exit_from_game(exit_string: str, param) -> None:
+def exit_from_game(exit_string: str, param:tuple) -> None:
     print(exit_string.format(*param))
     sys.exit()
 
