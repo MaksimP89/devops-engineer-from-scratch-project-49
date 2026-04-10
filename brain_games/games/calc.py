@@ -1,7 +1,6 @@
 from random import choice, randint
 
 from brain_games.logic.const import (
-    
     QUESTION_2,
 )
 from brain_games.logic.utils import (

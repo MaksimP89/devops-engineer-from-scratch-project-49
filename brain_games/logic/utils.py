@@ -30,10 +30,10 @@ def main_loop(input_func: callable, question: str, user_name: str):
         input_value = get_input_from_user(INPUT_FROM_USER.format(result), 2)
         print(ANSWER_OUT.format(input_value))
         run_game += main_execution(
-            inp_user = input_value,
-            expect = expect,
-            exite_string = EXIT,
-            format_param = (input_value,expect, user_name),
+            inp_user=input_value,
+            expect=expect,
+            exite_string=EXIT,
+            format_param=(input_value, expect, user_name),
         )
     print(CONGL.format(user_name))
 
@@ -57,7 +57,7 @@ def get_input_from_user(str_out: str, type_emtry: int) -> str:
     return input_str
 
 
-def exit_from_game(exit_string: str, param:tuple) -> None:
+def exit_from_game(exit_string: str, param: tuple) -> None:
     print(exit_string.format(*param))
     sys.exit()
 
